@@ -40,6 +40,7 @@ func (t *Training) Parse(datastring string) (err error) {
 		return errors.New("длительность должна быть больше нуля")
 	}
 
+	// Записываем данные после всех проверок, чтобы при ошибке структура не менялась.
 	t.Steps = steps
 	t.TrainingType = dataParts[1]
 	t.Duration = duration
