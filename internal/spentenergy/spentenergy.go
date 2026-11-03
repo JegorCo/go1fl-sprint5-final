@@ -14,6 +14,7 @@ const (
 )
 
 func WalkingSpentCalories(steps int, weight, height float64, duration time.Duration) (float64, error) {
+	// Для ходьбы используем общую формулу бега с поправкой на коэффициент ходьбы.
 	calories, err := RunningSpentCalories(steps, weight, height, duration)
 	if err != nil {
 		return 0, err

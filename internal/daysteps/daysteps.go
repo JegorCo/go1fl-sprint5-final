@@ -6,6 +6,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
 	"github.com/Yandex-Practicum/tracker/internal/personaldata"
 	"github.com/Yandex-Practicum/tracker/internal/spentenergy"
 )
@@ -38,6 +39,7 @@ func (ds *DaySteps) Parse(datastring string) (err error) {
 		return errors.New("длительность должна быть больше нуля")
 	}
 
+	// Записываем данные после всех проверок.
 	ds.Steps = steps
 	ds.Duration = duration
 	return nil
