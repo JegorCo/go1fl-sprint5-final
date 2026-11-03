@@ -21,9 +21,15 @@ func RunningSpentCalories(steps int, weight, height float64, duration time.Durat
 }
 
 func MeanSpeed(steps int, height float64, duration time.Duration) float64 {
-	// TODO: реализовать функцию
+	if steps < 0 || duration <= 0 {
+		return 0
+	}
+
+	distance := Distance(steps, height)
+	return distance / duration.Hours()
 }
 
 func Distance(steps int, height float64) float64 {
-	// TODO: реализовать функцию
+	stepLength := height * stepLengthCoefficient
+	return float64(steps) * stepLength / mInKm
 }
